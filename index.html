@@ -1,0 +1,793 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#FEFAEF">
+<title>Emotional Stability - Coach Heba ElSawah</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap">
+<style>
+/* Palette taken from Heba ElSawah's webinar funnel */
+/* Light-only by design: same palette for every viewer */
+:root{
+  color-scheme:light;
+  --bg:#FEFAEF; --surface:#FFFFFF; --surface-2:#F7F2E3; --sage:#DAE0D6; --sage-soft:#EDF0E9;
+  --ink:#1F241A; --muted:#525948; --olive:#616146; --line:#E7DFC8;
+  --cta:#DC8D4B; --cta-ink:#1F241A; --cta-soft:#F7E3D0;
+  --deep:#28281D; --deep-ink:#FEFAEF; --gold:#E7D3A6; --gold-deep:#C9AA6A;
+  --calm:#7F8F6C; --danger:#B3362F; --danger-soft:#FBE7E4;
+  --sel:#28281D; --sel-ink:#FEFAEF;
+  --shadow:0 1px 2px rgba(40,40,29,.05),0 10px 30px rgba(40,40,29,.07);
+  --font:"Cairo",system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{background:var(--bg)}
+body{color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.8;padding-inline:16px;padding-block:0 48px}
+.app{max-width:620px;margin:0 auto}
+button,input,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--cta);outline-offset:2px;border-radius:8px}
+
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:14px;border-bottom:1px solid var(--line)}
+.brand{display:flex;flex-direction:column;line-height:1.3;cursor:pointer;background:none;border:0;padding:0;text-align:start}
+.brand b{font-weight:800;font-size:17px;direction:ltr}
+.brand span{font-size:12.5px;color:var(--olive);font-weight:600;direction:ltr;text-align:end}
+.react-btn{display:inline-flex;align-items:center;gap:6px;background:var(--cta);color:var(--cta-ink);border:0;border-radius:999px;padding:8px 16px;font-weight:700;font-size:14px;cursor:pointer;white-space:nowrap}
+.react-btn svg{width:16px;height:16px}
+
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:18px}
+.steps div{display:flex;flex-direction:column;gap:6px;font-size:12.5px;color:var(--muted)}
+.steps i{display:block;height:4px;border-radius:4px;background:var(--line)}
+.steps .on i{background:var(--cta)} .steps .on{color:var(--ink);font-weight:700}
+.steps .done i{background:var(--calm)}
+
+.screen{margin-top:22px;display:flex;flex-direction:column;gap:18px;animation:in .35s ease}
+@keyframes in{from{opacity:.4;transform:translateY(6px)}to{opacity:1;transform:none}}
+.eyebrow{font-size:13px;letter-spacing:.02em;color:var(--olive);font-weight:700}
+h1,h2{font-weight:800;line-height:1.45;text-wrap:balance;margin:0}
+h1{font-size:30px} h2{font-size:23px}
+.sub{display:block;font-size:14.5px;color:var(--muted);font-weight:500;margin-top:4px;line-height:1.6}
+p{margin:0}
+.lead{color:var(--muted);font-size:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:var(--shadow)}
+.quote{font-size:20px;font-weight:700;color:var(--ink);display:inline-block;background:linear-gradient(135deg,#FFF8E8 0%,#E7D3A6 60%,#C9AA6A 100%);color:#1F241A;padding:4px 16px;border-radius:999px;align-self:flex-start}
+
+.hero{padding-block:18px 4px;display:flex;flex-direction:column;gap:12px}
+.modes{display:flex;flex-direction:column;gap:10px}
+.mode{display:grid;grid-template-columns:46px 1fr auto;align-items:center;gap:14px;text-align:start;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px;cursor:pointer;transition:border-color .2s,transform .2s}
+.mode:hover{border-color:var(--cta);transform:translateY(-1px)}
+.mode .ic{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:var(--sage);color:var(--deep)}
+.mode.hot{border-color:var(--cta)}
+.mode.hot .ic{background:var(--cta);color:var(--cta-ink)}
+.mode .ic svg{width:22px;height:22px}
+.mode b{display:block;font-weight:700;font-size:16.5px;line-height:1.5}
+.mode small{display:block;color:var(--muted);font-size:14px;line-height:1.6}
+.mode .arr{color:var(--muted)}
+.label{font-size:13px;color:var(--muted);font-weight:700}
+
+textarea,input[type=text]{width:100%;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px;resize:vertical;line-height:1.8}
+textarea{min-height:130px}
+textarea:focus,input[type=text]:focus{border-color:var(--cta);outline:none;box-shadow:0 0 0 3px var(--cta-soft)}
+.hint{font-size:14px;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:14px;padding:12px 22px;font-weight:700;cursor:pointer;border:1px solid transparent;font-size:15.5px}
+.btn.primary{background:var(--cta);color:var(--cta-ink)}
+.btn.primary:disabled{opacity:.45;cursor:not-allowed}
+.btn.ghost{background:transparent;border-color:var(--line);color:var(--ink)}
+.btn.ghost:hover{border-color:var(--olive)}
+.btn.link{background:none;border:0;color:var(--muted);padding:8px;text-decoration:underline;text-underline-offset:5px;font-weight:600}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.row.end{justify-content:space-between}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:7px 16px;cursor:pointer;font-size:15px;font-weight:600;transition:all .15s}
+.chip:hover{border-color:var(--olive)}
+.chip.sel{background:var(--sel);border-color:var(--sel);color:var(--sel-ink)}
+.chip.soft{color:var(--muted);border-style:dashed;font-weight:500}
+details.more{border-top:1px dashed var(--line);padding-top:12px}
+details.more summary{cursor:pointer;color:var(--olive);font-weight:700;font-size:14.5px}
+.fam{margin-top:12px}
+.fam h4{margin:0 0 6px;font-size:13px;color:var(--muted);font-weight:700}
+.fam .chip{font-size:14px;padding:5px 12px}
+
+.scale{display:grid;grid-template-columns:repeat(10,1fr);gap:5px}
+.scale button{aspect-ratio:1/1.15;border-radius:10px;border:1px solid var(--line);background:var(--surface);cursor:pointer;font-weight:700;font-variant-numeric:tabular-nums;font-size:15px;max-width:100%}
+.scale button.sel{color:#1F241A;border-color:transparent}
+.scale-legend{display:flex;justify-content:space-between;font-size:13px;color:var(--muted)}
+
+.stop-grid{display:grid;gap:10px}
+.stop-item{display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:start;padding:14px;border-radius:14px;background:var(--surface);border:1px solid var(--line)}
+.stop-item .L{font-size:28px;font-weight:800;color:var(--cta);line-height:1;text-align:center;padding-top:6px}
+.stop-item b{font-weight:700;display:block}
+.stop-item b em{font-style:normal;color:var(--muted);font-weight:500;font-size:13px;margin-inline-start:6px}
+.stop-item p{color:var(--muted);font-size:15px}
+.breath{display:flex;flex-direction:column;align-items:center;gap:14px;padding-block:18px}
+.orb{width:170px;height:170px;border-radius:50%;display:grid;place-items:center;position:relative}
+.orb::before{content:"";position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 50% 45%,var(--gold),transparent 72%);border:2px solid var(--gold-deep);transform:scale(.55);transition:transform 4s ease-in-out}
+.orb.in::before{transform:scale(1);transition-duration:4s}
+.orb.out::before{transform:scale(.55);transition-duration:6s}
+.orb span{position:relative;font-weight:700;font-size:19px;text-align:center;line-height:1.5}
+.orb small{display:block;font-size:13px;color:var(--muted);font-weight:500}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:520px){.split{grid-template-columns:1fr}}
+.pane{border-radius:16px;padding:14px;border:1px solid var(--line);background:var(--surface);display:flex;flex-direction:column;gap:8px}
+.pane.fact{border-top:4px solid var(--calm)}
+.pane.story{border-top:4px solid var(--cta)}
+.pane h3{margin:0;font-size:16px;font-weight:800}
+.pane h3 small{display:block;color:var(--muted);font-weight:500;font-size:13px}
+.pane textarea{min-height:100px;background:var(--surface-2);font-size:15px}
+.trap{background:var(--cta-soft);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:4px}
+.trap b{font-weight:800}
+.note{border-inline-start:3px solid var(--gold-deep);padding-inline-start:12px;color:var(--muted);font-size:15px}
+.poss{display:flex;flex-direction:column;gap:8px}
+.poss div{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 14px;display:grid;grid-template-columns:auto 1fr;gap:12px}
+.poss em{font-style:normal;font-size:12.5px;color:var(--olive);font-weight:700;white-space:nowrap;padding-top:3px}
+
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:460px){.opts{grid-template-columns:1fr}}
+.opt{display:flex;gap:12px;align-items:center;text-align:start;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px;cursor:pointer;font-weight:600}
+.opt:hover{border-color:var(--cta)}
+.opt .k{font-weight:800;color:var(--deep);width:30px;height:30px;border-radius:9px;background:var(--sage);display:grid;place-items:center;flex:none;font-size:14px}
+.opt.sel{border-color:var(--cta);box-shadow:0 0 0 3px var(--cta-soft)}
+.opt small{display:block;font-weight:500}
+
+.draft{background:var(--surface);border:1px solid var(--gold-deep);border-radius:16px;padding:18px;font-size:17px;line-height:1.9;white-space:pre-wrap}
+.checks{display:flex;flex-direction:column;gap:6px;color:var(--muted);font-size:15px}
+
+.snap{background:var(--surface);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow)}
+.snap header{padding:18px;background:var(--deep);color:var(--deep-ink);position:relative}
+.snap header .eyebrow{color:var(--gold)}
+.snap header h2{font-size:21px;margin-top:2px}
+.snap dl{margin:0;padding:6px 18px 12px}
+.snap dl div{display:grid;grid-template-columns:130px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+.snap dl div:last-child{border-bottom:0}
+@media (max-width:440px){.snap dl div{grid-template-columns:1fr;gap:2px}}
+.snap dt{font-size:13.5px;color:var(--muted);font-weight:700}
+.snap dd{margin:0;font-weight:600}
+.int{font-variant-numeric:tabular-nums;font-weight:800}
+.int .down{color:var(--calm)}
+.closing{text-align:center;display:flex;flex-direction:column;gap:8px;align-items:center;padding-block:10px}
+.closing .quote{align-self:center}
+.practice{background:var(--sage-soft);border:1px solid var(--sage);border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:10px}
+.practice ul{margin:0;padding-inline-start:20px;color:var(--muted)}
+
+.lop{background:var(--deep);color:var(--deep-ink);border-radius:20px;padding:24px 20px;display:flex;flex-direction:column;gap:10px;box-shadow:var(--shadow)}
+.lop h2{font-size:21px;color:var(--gold);margin-bottom:4px}
+.lop p{color:#E9E4D3}
+.lop-btn{align-self:flex-start;margin-top:8px;font-size:16.5px;padding:13px 26px;text-decoration:none}
+.lop-note{font-size:13.5px;color:#C9C3AE!important}
+.foot-cta{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px 12px;background:var(--sage-soft);border:1px solid var(--sage);border-radius:14px;padding:12px 16px;margin-top:28px;font-weight:600;font-size:15px;text-align:center}
+.foot-cta a{color:var(--deep);background:var(--gold);border-radius:999px;padding:4px 14px;text-decoration:none;font-weight:700;white-space:nowrap}
+.foot-cta a:hover{background:var(--gold-deep)}
+.foot{margin-top:14px!important}
+.loading{display:flex;flex-direction:column;align-items:center;gap:14px;padding-block:40px;text-align:center}
+.pulse{width:64px;height:64px;border-radius:50%;background:var(--gold);border:2px solid var(--gold-deep);animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(.7);opacity:.6}50%{transform:scale(1);opacity:1}}
+.banner{background:var(--surface-2);border:1px dashed var(--line);border-radius:12px;padding:10px 14px;font-size:14px;color:var(--muted)}
+.safety{background:var(--danger-soft);border:1px solid var(--danger);border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:10px}
+.safety h2{color:var(--danger)}
+.tag{position:absolute;top:16px;inset-inline-end:16px;background:var(--gold);color:#1F241A;font-size:12px;font-weight:700;padding:1px 12px;border-radius:999px}
+.foot{margin-top:28px;font-size:13px;color:var(--muted);text-align:center;line-height:1.7}
+.hist{display:flex;flex-direction:column;gap:8px}
+.hist div{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:14px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.hist span{color:var(--muted)}
+@media (prefers-reduced-motion: reduce){
+  .screen{animation:none} .pulse{animation:none} .orb::before{transition:none!important} .mode{transition:none}
+}
+</style>
+<style>body{margin:0}[hidden]{display:none!important}img{max-width:100%}</style>
+</head>
+<body>
+
+<div class="app" dir="rtl" lang="ar">
+  <header class="bar">
+    <button class="brand" data-act="home" aria-label="الرئيسية">
+      <b>Emotional Stability</b>
+      <span>Coach Heba ElSawah</span>
+    </button>
+    <button class="react-btn" data-act="quick">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>
+      محتاج وقفة
+    </button>
+  </header>
+  <div id="progress"></div>
+  <main id="view"></main>
+  <p class="foot-cta" id="footCta">عايز الثبات ده يبقى أسلوب حياة؟ <a href="https://hebaelsawah.com/living-on-purpose-ar-f" target="_blank" rel="noopener">اتعرف على LOP ←</a></p>
+  <p class="foot">أداة للتأمل وتنظيم المشاعر، مبنية على منهج الثبات الانفعالي مع هبة السواح.<br>مش بديل عن العلاج النفسي أو التشخيص أو دعم الأزمات.</p>
+</div>
+
+<script>
+
+
+const EMOTION_FAMILIES = {
+  "الغضب":["مستفز","متغاظ","محبط","مقهور","حاسس بالظلم","ثاير","مستنزف"],
+  "الحزن":["زعلان","مجروح","مخذول","مكسور","وحيد","حاسس بالفقد","مهموم","يائس"],
+  "الخوف والقلق":["قلقان","متوتر","مضغوط","مش مطمن","مرتبك","متلخبط","حاسس بالتهديد","مرعوب","متردد","عاجز"],
+  "الخزي والذنب":["محرج","مكسوف","حاسس بالذنب","ندمان","حاسس إني مش كفاية","مفضوح","صغير"],
+  "الفرح":["مبسوط","مرتاح","ممتن","متحمس","فخور","متفائل","مليان طاقة","راضي","مطمن","خفيف"],
+  "القرب والحب":["حاسس بالأمان","متشاف","متقدّر","قريب","دافي","متفهم","منتمي","مسنود","واثق"]
+};
+const VALUES = ["الاحترام","الحرية","العيلة","الأمان","الإيمان","النمو","الصدق","العدل","الحب","الإبداع","الاستقلال","المسؤولية","العطاء","الإنجاز","الصحة","السلام الداخلي","المغامرة","الانتماء","الكرامة","الحكمة","التأثير","الجمال","المرح","الوفاء","التعلم","الامتنان","الشجاعة","البساطة","الإتقان","الرحمة","التقدير"];
+const TRAPS = [
+  ["قراءة الأفكار","افترضنا إننا عارفين الطرف التاني بيفكر في إيه."],
+  ["التهويل","الموقف كبر في دماغنا لأسوأ نتيجة ممكنة."],
+  ["التعميم","موقف واحد اتحول لـ\"دايمًا\" أو \"عمره ما\"."],
+  ["الشخصنة","اعتبرنا إن اللي حصل بسببنا أو موجّه لنا."],
+  ["يا أبيض يا أسود","مفيش منطقة وسط في شوفتنا للموقف."],
+  ["التنبؤ بالمستقبل","عقلنا قرر هيحصل إيه قبل ما يحصل."],
+  ["المفروض ولازم","قواعد صارمة عن إزاي الناس \"لازم\" يتصرفوا."]
+];
+const CHOICES = [
+  ["A","أعبّر عن اللي حسيته","express a feeling"],
+  ["B","أحط حد واضح","set a boundary"],
+  ["C","أسأل وأفهم","ask for clarification"],
+  ["D","أستنى لحد ما أهدى","wait"],
+  ["E","أسيب الموضوع","let it go"],
+  ["F","لسه مش عارف","unsure"]
+];
+const TONES = [["Calm & direct","هادي ومباشر"],["Warm & honest","دافي وصريح"],["Firm & boundaried","حازم ويحفظ حدودك"],["Short & simple","قصير وبسيط"]];
+const LOP_URL = "https://hebaelsawah.com/living-on-purpose-ar-f";
+const CRISIS_RE = /(انتحر|انتحار|أموت نفسي|اموت نفسي|أقتل نفسي|اقتل نفسي|أأذي نفسي|أذي نفسي|مش عايز أعيش|مش عايزة أعيش|مش عايز اعيش|مش عايزة اعيش|نفسي أموت|نفسي اموت|هقتله|هقتلها|kill myself|suicid|end my life|hurt myself|self[- ]?harm|want to die)/i;
+
+let S;
+function fresh(mode){
+  S = {mode, screen:'tell', situation:'', ai:null, emotion:'', i1:null, i2:null,
+       facts:'', story:'', factsAI:'', storyAI:'', traps:[], alts:[], values:[], value:'',
+       choice:'', tone:'', draft:'', draftCheck:'', manual:false, err:'', patternOut:null};
+}
+let aiOn = false, ctl = null, ACCESS = '';
+try{ ACCESS = localStorage.getItem('es_code') || ''; }catch(e){}
+S = {mode:'home', screen:'boot'};
+async function boot(){
+  try{
+    const r = await fetch('/api/ai', {cache:'no-store'});
+    const j = await r.json();
+    aiOn = !!j.ai;
+    if(j.codeRequired){
+      const ok = ACCESS && await checkCode(ACCESS);
+      if(!ok){ S = {mode:'home', screen:'unlock'}; render(); return; }
+    }
+  }catch(e){ aiOn = false; }
+  S = {mode:'home', screen:'home'}; render();
+}
+async function checkCode(code){
+  try{
+    const r = await fetch('/api/ai', {method:'POST', headers:{'content-type':'application/json'}, body:JSON.stringify({task:'check', code})});
+    return r.ok;
+  }catch(e){ return false; }
+}
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function heat(n){ if(n<=3) return '#B7C4A6'; if(n<=6) return '#E7D3A6'; return '#DC8D4B'; }
+function store(k,v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
+function load(k,d){ try{ const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; }catch(e){ return d; } }
+
+async function ask(task, data, opts={}){
+  if(!aiOn) throw {code:'unavailable'};
+  ctl = new AbortController();
+  if(opts.fresh) data = {...data, variation: Math.random().toString(36).slice(2,7)};
+  let r;
+  try{
+    r = await fetch('/api/ai', {method:'POST', headers:{'content-type':'application/json'}, body:JSON.stringify({task, data, code:ACCESS}), signal:ctl.signal});
+  }catch(e){ throw {code: e && e.name==='AbortError' ? 'cancelled' : 'network'}; }
+  const j = await r.json().catch(()=>({}));
+  if(r.status===401){ S = {mode:'home', screen:'unlock'}; render(); throw {code:'cancelled'}; }
+  if(!r.ok || !j.result) throw {code: j.error || 'upstream'};
+  return j.result;
+}
+const ANALYZE_TASK = 'analyze';
+const REVIEW_TASK = 'review';
+const DRAFT_TASK = 'draft';
+const UNSURE_TASK = 'unsure';
+const PATTERN_TASK = 'pattern';
+
+function aiErrorText(e){
+  const c = e && e.code;
+  if(c==='unavailable'||c==='not_configured') return 'هنكمل مع بعض بالخطوات اليدوية — نفس المنهج بالظبط، بس إنت اللي بتكتب.';
+  if(c==='rate_limited') return 'فيه ضغط على الخدمة دلوقتي، فهنكمل بالخطوات اليدوية. تقدر تجرب تاني بعد شوية.';
+  if(c==='network') return 'النت فيه مشكلة دلوقتي، فهنكمل بالخطوات اليدوية.';
+  return 'حصلت مشكلة في الاتصال، فهنكمل بالخطوات اليدوية.';
+}
+function goSafety(){ S.screen='safety'; render(); }
+
+const STEP_OF = {tell:0,name:0,intensity:0,stopOffer:1,stop:1,story:2,alts:2,values:3,choice:3,tone:3,draft:3,wait:3,unsure:3};
+function progress(){
+  const el = $('#progress');
+  if(!(S.screen in STEP_OF)){ el.innerHTML=''; return; }
+  const cur = STEP_OF[S.screen];
+  const names = ['الإحساس','الوقفة','القصة','اللي يهمك'];
+  el.innerHTML = '<div class="steps" aria-label="مراحل الرحلة">' + names.map((n,i)=>`<div class="${i<cur?'done':i===cur?'on':''}"><i></i>${i+1}. ${n}</div>`).join('') + '</div>';
+}
+function render(){
+  progress();
+  const fc = document.getElementById('footCta'); if(fc) fc.hidden = ['summary','safety','unlock','boot'].includes(S.screen);
+  const v = $('#view');
+  const fn = SCREENS[S.screen] || SCREENS.home;
+  v.innerHTML = `<section class="screen">${fn()}</section>`;
+  const f = v.querySelector('[autofocus]'); if(f) f.focus({preventScroll:true});
+  window.scrollTo(0,0);
+}
+const ICON = {
+  bolt:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>',
+  cloud:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/><path d="M9 11h.01M12 11h.01M15 11h.01"/></svg>',
+  loop:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 2l4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg>'
+};
+const back = (to, label='رجوع') => `<button class="btn link" data-act="go" data-to="${to}">${label}</button>`;
+
+const SCREENS = {
+boot(){ return `<div class="loading"><div class="pulse" aria-hidden="true"></div></div>`; },
+unlock(){
+  return `
+  <div class="hero">
+    <p class="eyebrow">أداة الـVIP · الثبات الانفعالي</p>
+    <h1>أهلًا بيك 💛</h1>
+    <p class="lead">الأداة دي متاحة لمشتركين باقة الـVIP. اكتب كود الدخول اللي وصلك مع الباقة.</p>
+  </div>
+  <input type="text" id="codeIn" autofocus autocomplete="off" aria-label="كود الدخول" placeholder="كود الدخول" style="text-align:center;font-size:18px;letter-spacing:.08em">
+  ${S.err?`<p class="banner">${esc(S.err)}</p>`:''}
+  <button class="btn primary" data-act="unlock">ادخل</button>`;
+},
+home(){
+  return `
+  <div class="hero">
+    <p class="eyebrow">أداة الـVIP · الثبات الانفعالي</p>
+    <h1>قبل ما ترد… خد لحظة ترجع فيها لنفسك.</h1>
+    <p class="lead">احكي الموقف زي ما حصل، وهنمشي مع بعض خطوة بخطوة: نسمّي الإحساس، ناخد وقفة، نفصل اللي حصل عن اللي عقلك قاله عنه، ونختار رد يشبهك.</p>
+    <p class="quote">الإحساس رسالة، مش أمر.</p>
+  </div>
+  <div class="modes">
+    <button class="mode hot" data-act="quick"><span class="ic">${ICON.bolt}</span><span><b>محتاج أهدى قبل ما أرد</b><small>خطوات سريعة في أقل من دقيقتين، للحظة اللي عايز ترد فيها فورًا.</small></span><span class="arr">←</span></button>
+    <button class="mode" data-act="full"><span class="ic">${ICON.cloud}</span><span><b>عايز أفهم اللي جوايا</b><small>رحلة كاملة بالأربع خطوات لموقف لسه شاغلك.</small></span><span class="arr">←</span></button>
+    <button class="mode" data-act="pattern"><span class="ic">${ICON.loop}</span><span><b>نفس الموقف بيتكرر معايا</b><small>نلاحظ مع بعض الإحساس والقصة اللي بيرجعوا كل مرة.</small></span><span class="arr">←</span></button>
+  </div>
+  ${!aiOn ? `<p class="banner">المساعد الذكي مش متاح دلوقتي، فالأداة شغالة بالخطوات اليدوية — نفس المنهج بالظبط، بس إنت اللي بتكتب.</p>`:''}
+  `;
+},
+
+tell(){
+  const quick = S.mode==='quick';
+  return `
+  <div><p class="eyebrow">${quick?'وقفة سريعة':'الموقف'}</p>
+  <h2>${quick?'تمام. مش هنحل حاجة دلوقتي.':'إيه اللي حصل؟'}</h2></div>
+  <p class="lead">${quick?'اكتب اللي حصل في جملة واحدة، وخلينا ناخد وقفة مع بعض.':'اكتبه بكلامك، زي ما هو. مش لازم يكون مرتب — المهم يكون صادق.'}</p>
+  <textarea id="sit" autofocus aria-label="الموقف" placeholder="مثال: بعت رسالة من ساعتين ومفيش رد، وحاسس إني مش فارق معاه." ${quick?'style="min-height:90px"':''}>${esc(S.situation)}</textarea>
+  ${S.err?`<p class="banner">${esc(S.err)}</p>`:''}
+  <div class="row end">${back('home')}<button class="btn primary" data-act="analyze">${quick?'يلا نبدأ':'كمّل'}</button></div>`;
+},
+
+loading(){
+  return `<div class="loading"><div class="pulse" aria-hidden="true"></div>
+  <h2>${esc(S.loadingText||'بنقرا الموقف معاك…')}</h2>
+  <p class="lead">خد نفس هادي لحد ما نخلص.</p>
+  <button class="btn ghost" data-act="cancel">إلغاء</button></div>`;
+},
+
+name(){
+  const ai = S.ai;
+  const opts = ai?.emotions?.length ? ai.emotions : [];
+  const quick = S.mode==='quick';
+  return `
+  <div><p class="eyebrow">الخطوة 1 · نسمّي الإحساس</p><h2>قبل ما نفكر نعمل إيه، خلينا نعرف إحنا حاسين بإيه.</h2></div>
+  ${ai?.reflection?`<p class="note">${esc(ai.reflection)}</p>`:''}
+  <p>${opts.length?'دي مشاعر ممكن تكون موجودة جواك دلوقتي. اختار الأقرب، حتى لو مش دقيقة ١٠٠٪.':'"متضايق" كلمة واسعة. أنهي كلمة أدق توصف اللي جواك دلوقتي؟'}</p>
+  <div class="chips">
+    ${opts.map(e=>`<button class="chip ${S.emotion===e?'sel':''}" data-act="emo" data-v="${esc(e)}">${esc(e)}</button>`).join('')}
+    <button class="chip soft" data-act="unsureEmo">مش متأكد</button>
+  </div>
+  ${S.showClarify?`<div class="card"><p><b>طبيعي جدًا.</b> أحيانًا الإحساس بيبقى متلخبط ومش ليه اسم واحد.</p><p class="lead" style="margin-top:6px">${esc(ai?.clarify || 'لو ركزت في جسمك دلوقتي، الإحساس ده أقرب لغضب، لحزن، ولا لقلق؟')}</p></div>`:''}
+  <details class="more" ${(!opts.length||S.showClarify)?'open':''}><summary>مش لاقي الكلمة؟ شوف قايمة المشاعر كلها</summary>
+    ${Object.entries(EMOTION_FAMILIES).map(([f,list])=>`<div class="fam"><h4>${f}</h4><div class="chips">${list.map(e=>`<button class="chip ${S.emotion===e?'sel':''}" data-act="emo" data-v="${esc(e)}">${e}</button>`).join('')}</div></div>`).join('')}
+    <div class="fam"><h4>أو اكتبه بكلامك</h4><input type="text" id="emoCustom" placeholder="مثلًا: متلخبط ومخذول في نفس الوقت" value="${esc(opts.includes(S.emotion)?'':S.emotion)}"></div>
+  </details>
+  ${quick?intensityBlock('i1','قد إيه الإحساس ده قوي دلوقتي؟'):''}
+  <div class="row end">${back('tell')}<button class="btn primary" data-act="nameNext">كمّل</button></div>`;
+},
+
+intensity(){
+  return `
+  <div><p class="eyebrow">الخطوة 1 · شدة الإحساس</p><h2>قد إيه "${esc(S.emotion)}" قوي دلوقتي؟</h2></div>
+  ${intensityBlock('i1')}
+  <p class="note">مش هدفنا نخلّي الإحساس يختفي. هدفنا نفهمه، قبل ما يقرر هو بدالنا.</p>
+  <div class="row end">${back('name')}<button class="btn primary" data-act="intNext" ${S.i1?'':'disabled'}>كمّل</button></div>`;
+},
+
+stopOffer(){
+  return `
+  <div><p class="eyebrow">الخطوة 2 · الوقفة</p><h2>الشدة ${S.i1} من 10. تحب ناخد وقفة قصيرة قبل ما نكمّل؟</h2></div>
+  <p class="lead">الوقفة مفيدة حتى لو الإحساس مش عالي. عشر ثواني بس.</p>
+  <div class="row"><button class="btn primary" data-act="stopYes">أيوه، خليني أوقف</button><button class="btn ghost" data-act="go" data-to="story">كمّل من غيرها</button></div>
+  <div class="row">${back('intensity')}</div>`;
+},
+
+stop(){
+  return `
+  <div><p class="eyebrow">الخطوة 2 · الوقفة</p><h2>استنى قبل ما تتصرف. عشر ثواني كفاية.</h2></div>
+  <div class="stop-grid">
+    <div class="stop-item"><span class="L">S</span><div><b>وقّف <em>Stop</em></b><p>ما تبعتش الرسالة، ما تردش، وما تاخدش قرار دلوقتي.</p></div></div>
+    <div class="stop-item"><span class="L">T</span><div><b>خد نفس <em>Take a breath</em></b><p>شهيق 4 ثواني، زفير 6 ثواني. نكررها 3 مرات.</p>
+      <div class="breath"><div class="orb" id="orb"><span id="orbTxt">جاهز؟<small>اضغط "ابدأ" وتابع الدايرة</small></span></div>
+      <button class="btn ghost" data-act="breath" id="breathBtn">ابدأ التنفس</button></div></div></div>
+    <div class="stop-item"><span class="L">O</span><div><b>لاحظ <em>Observe</em></b><p>إيه اللي حاسس بيه؟ جسمك بيقولك إيه؟ وإيه أول حاجة نفسك تعملها؟</p></div></div>
+    <div class="stop-item"><span class="L">P</span><div><b>كمّل باختيارك <em>Proceed</em></b><p>إيه الرد اللي هتكون فخور بيه بكرة؟</p></div></div>
+  </div>
+  <p class="hint">التنفس هنا مش علاج سحري. هو مساحة صغيرة بينك وبين رد الفعل.</p>
+  <div class="row end">${back(S.mode==='quick'?'name':'intensity')}<button class="btn primary" data-act="go" data-to="story">أنا جاهز أكمّل</button></div>`;
+},
+
+story(){
+  const traps = S.traps||[];
+  return `
+  <div><p class="eyebrow">الخطوة 3 · الحقيقة والقصة</p><h2>خلينا نفصل اللي حصل فعلًا عن اللي عقلك قاله عنه.</h2></div>
+  <div class="split">
+    <div class="pane fact"><h3>اللي حصل فعلًا<small>زي ما كاميرا كانت هتصوّره</small></h3>
+      <textarea id="facts" aria-label="اللي حصل فعلًا" placeholder="مين عمل إيه، وإمتى. مثال: بعتله الساعة 3 ومردش لحد الساعة 6.">${esc(S.facts)}</textarea></div>
+    <div class="pane story"><h3>اللي عقلك قاله<small>التفسير اللي جه في دماغك</small></h3>
+      <textarea id="story" aria-label="اللي عقلك قاله" placeholder='مثال: "هو بيتجاهلني" / "أنا مش مهمة"'>${esc(S.story)}</textarea></div>
+  </div>
+  ${S.ai && !S.manual ? `<p class="hint">ده فهمي من كلامك. عدّل أي حاجة مش دقيقة — إنت أدرى بموقفك.</p>`:''}
+  ${S.manual ? `<div class="card"><p class="label" style="margin-bottom:8px">حاسس إن فيه فخ تفكير هنا؟ اختار لو فيه</p><div class="chips">${TRAPS.map(([n])=>`<button class="chip ${traps.some(t=>t.name===n)?'sel':''}" data-act="trap" data-v="${n}">${n}</button>`).join('')}</div></div>`
+   : traps.length ? `<p class="label">ممكن يكون فيه فخ تفكير هنا</p>${traps.map(t=>`<div class="trap"><b>${esc(t.name)}</b><p>${esc(t.why)}</p></div>`).join('')}` : ''}
+  ${traps.length?`<p class="note">ده مش معناه إن إحساسك غلط أو إن تفسيرك مستحيل. معناه إن فيه فرق بين اللي نعرفه واللي بنستنتجه.</p>`:''}
+  <div class="row end">${back(S.mode==='quick'||S.i1>=7||S.stopChosen?'stop':'stopOffer')}<button class="btn primary" data-act="storyNext">كمّل</button></div>`;
+},
+
+alts(){
+  const quick = S.mode==='quick';
+  const alts = S.alts||[];
+  return `
+  <div><p class="eyebrow">الخطوة 3 · احتمالات تانية</p><h2>إيه كمان ممكن يكون صحيح؟</h2></div>
+  <p class="lead">أول تفسير بييجي في دماغنا بيبقى الأعلى صوتًا، مش بالضرورة الأصدق.</p>
+  ${S.manual
+    ? `<label class="label" for="altIn">اكتب تفسيرين تانيين ممكن يكونوا صحيحين</label><textarea id="altIn" placeholder="ممكن يكون...&#10;ممكن يكون...">${esc(alts.join('\n'))}</textarea>`
+    : `<div class="poss">${alts.slice(0, quick?1:3).map((a,i)=>`<div><em>احتمال ${i+1}</em><span>${esc(a)}</span></div>`).join('')}</div>
+       <p class="hint">دي احتمالات، مش حقائق. مش مطلوب تقتنع بيها، مطلوب بس تشوفها.</p>`}
+  ${intensityBlock('i2','بعد ما شفنا الصورة أوسع… الإحساس بقى قد إيه؟')}
+  <div class="row end">${back('story')}<button class="btn primary" data-act="altsNext">كمّل</button></div>`;
+},
+
+values(){
+  const sug = (S.values&&S.values.length)?S.values:[];
+  return `
+  <div><p class="eyebrow">الخطوة 4 · اللي يهمك</p><h2>الإحساس القوي غالبًا بيشاور على حاجة غالية عندك.</h2></div>
+  <p class="lead">لما قيمة مهمة عندنا تتلمس، الإحساس بيعلى. ${sug.length?'أنهي واحدة دي أقرب للي اتلمس فيك؟':'اختار القيمة الأقرب للي اتلمس فيك.'}</p>
+  ${sug.length?`<div class="chips">${sug.map(v=>`<button class="chip ${S.value===v?'sel':''}" data-act="val" data-v="${esc(v)}">${esc(v)}</button>`).join('')}</div>`:''}
+  <details class="more" ${sug.length?'':'open'}><summary>${sug.length?'قيمة تانية؟':'قايمة القيم'}</summary><div class="chips" style="margin-top:10px">${VALUES.filter(v=>!sug.includes(v)).map(v=>`<button class="chip ${S.value===v?'sel':''}" data-act="val" data-v="${v}">${v}</button>`).join('')}</div></details>
+  <div class="row end">${back('alts')}<button class="btn primary" data-act="go" data-to="choice" ${S.value?'':'disabled'}>كمّل</button></div>`;
+},
+
+choice(){
+  const quick = S.mode==='quick';
+  return `
+  <div><p class="eyebrow">الاختيار</p><h2>الإحساس بيقترح… وإنت اللي بتقرر.</h2></div>
+  <div class="card"><p>حاسس بـ<b>${esc(S.emotion)}</b>${S.story?`، وعقلك قال: <b>${esc(S.story)}</b>`:''}.${S.value?`<br>واللي اتلمس جواك: <b>${esc(S.value)}</b>.`:''}</p>
+  <p class="lead" style="margin-top:8px">${S.value&&!quick?`لو هتتصرف بطريقة تعبّر عن "${esc(S.value)}"، إيه أقرب خطوة ليك دلوقتي؟`:'إيه أقرب خطوة ليك دلوقتي؟'}</p></div>
+  <div class="opts">${CHOICES.map(([k,l])=>`<button class="opt ${S.choice===k?'sel':''}" data-act="choose" data-v="${k}"><span class="k">${k}</span><span>${l}</span></button>`).join('')}</div>
+  <div class="row end">${back(quick?'alts':'values')}</div>`;
+},
+
+tone(){
+  return `
+  <div><p class="eyebrow">صياغة الرد</p><h2>تحب ردك يطلع بأنهي نبرة؟</h2></div>
+  <p class="lead">هنبني الرسالة على اللي حصل فعلًا، مش على القصة.</p>
+  <div class="opts">${TONES.map(([en,ar])=>`<button class="opt ${S.tone===en?'sel':''}" data-act="tone" data-v="${en}"><span>${ar}<small class="hint" style="direction:ltr;text-align:end">${en}</small></span></button>`).join('')}</div>
+  <div class="row end">${back('choice')}</div>`;
+},
+
+draft(){
+  const toneAr = (TONES.find(t=>t[0]===S.tone)||[])[1]||'';
+  return `
+  <div><p class="eyebrow">صياغة الرد · ${esc(toneAr)}</p><h2>ده رد ممكن يعبّر عنك</h2></div>
+  <div class="draft" id="draftTxt" contenteditable="true" aria-label="الرسالة، تقدر تعدّلها">${esc(S.draft)}</div>
+  <p class="hint">عدّل فيه براحتك. الكلمة الأخيرة ليك.</p>
+  <div class="row"><button class="btn primary" data-act="copyDraft">انسخ الرسالة</button>${S.manual?'':`<button class="btn ghost" data-act="redraft">اقترح صياغة تانية</button>`}<button class="btn ghost" data-act="go" data-to="tone">غيّر النبرة</button></div>
+  <div class="card checks"><b style="color:var(--ink)">قبل ما تبعت:</b>
+    ${S.draftCheck?`<span>• ${esc(S.draftCheck)}</span>`:''}
+    <span>• الرسالة دي بتقول اللي فعلًا عايز توصله؟</span>
+    <span>• لو قريتها بكرة، هتكون مرتاح لها؟</span>
+    ${S.mode==='quick'?'<span>• دي استجابة… ولا رد فعل؟</span>':''}</div>
+  <div class="row end">${back('choice')}<button class="btn primary" data-act="finish">شوف ملخص الوقفة</button></div>`;
+},
+
+wait(){
+  const letgo = S.choice==='E';
+  return `
+  <div><p class="eyebrow">الاختيار</p><h2>${letgo?'تسيب الموضوع؟ ده كمان اختيار.':'ساعات أهدى قرار… إنك ما تعملش حاجة دلوقتي.'}</h2></div>
+  <div class="card"><p>مش كل إحساس محتاج تصرف فوري، ومش مطلوب منك تحل الموقف وإنت في عز الإحساس.</p>
+  <p class="lead" style="margin-top:8px">${letgo?'السيب هنا اختيار واعي، مش كبت. ولو الإحساس رجع تاني، ده معناه إن فيه حاجة تستاهل ترجعلها.':'ارجع للموقف لما تهدى، وساعتها افتح الأداة واكتب ردك وإنت مرتاح.'}</p></div>
+  <div class="row end">${back('choice')}<button class="btn primary" data-act="finish">شوف ملخص الوقفة</button></div>`;
+},
+
+unsure(){
+  const u = S.unsureOut;
+  const steps = u?.steps?.length ? u.steps : ['أستنى لبكرة وأرجع للموقف','أكتب اللي حاسس بيه لنفسي بس','أتكلم مع حد بثق فيه'];
+  return `
+  <div><p class="eyebrow">الاختيار</p><h2>مش لازم تعرف الإجابة دلوقتي.</h2></div>
+  <div class="card"><p>${esc(u?.line || 'خلينا نصغّر السؤال شوية.')}</p>
+  <p style="margin-top:10px"><b>${esc(u?.question || 'لو الموقف ده خلص بطريقة تريحك، هيبقى شكله إيه؟')}</b></p>
+  <p class="label" style="margin-top:12px">خطوات صغيرة ممكنة</p>
+  <ul style="margin:4px 0 0;padding-inline-start:20px;color:var(--muted)">${steps.map(s=>`<li>${esc(s)}</li>`).join('')}</ul></div>
+  <div class="row end">${back('choice','ارجع للاختيارات')}<button class="btn primary" data-act="finish">شوف ملخص الوقفة</button></div>`;
+},
+
+summary(){
+  const snap = currentSnap();
+  const quick = S.mode==='quick';
+  return `
+  ${snapCard(snap,false)}
+  <div class="row"><button class="btn ghost" data-act="copySnap">انسخ الملخص</button></div>
+  <div class="closing card">
+    ${quick?'<p class="lead">قبل ما تبعت أي حاجة، اسأل نفسك:</p><h2>دي استجابة… ولا رد فعل؟</h2>':''}
+    <p class="quote">الإحساس رسالة، مش أمر.</p>
+    <p class="lead">مش مطلوب منك ما تتهزش. المطلوب إنك تعرف طريق الرجوع لنفسك.</p>
+    <p><b>إيه الرد اللي هتكون فخور بيه بكرة؟</b></p>
+  </div>
+  ${lopBlock()}`;
+},
+
+pattern(){
+  const hist = load('es_history', []);
+  const out = S.patternOut;
+  return `
+  <div><p class="eyebrow">نفس الموقف بيتكرر</p><h2>إيه الموقف اللي بيرجعلك كل شوية؟</h2></div>
+  <p class="lead">احكيه بكلامك. هنلاحظ مع بعض إيه اللي بيتكرر فيه: الإحساس، والقصة، والقيمة اللي بتتلمس. من غير أحكام ومن غير تشخيص.</p>
+  <textarea id="patIn" autofocus aria-label="الموقف اللي بيتكرر" placeholder="مثال: كل ما حد يتأخر في الرد عليا بحس إني مش مهمة، وبفضل أفكر فيها طول اليوم.">${esc(S.situation)}</textarea>
+  ${hist.length?`<details class="more"><summary>آخر ${Math.min(hist.length,5)} وقفات على الجهاز ده (هناخدها في الاعتبار)</summary><div class="hist" style="margin-top:10px">${hist.slice(0,5).map(h=>`<div><b>${esc(h.emotion)}</b><span>${esc(h.story||'')}</span><span>${esc(h.value||'')}</span></div>`).join('')}</div></details>`:''}
+  ${S.err?`<p class="banner">${esc(S.err)}</p>`:''}
+  ${out?`
+    <div class="snap"><header><p class="eyebrow">النمط</p><h2>اللي بيتكرر معاك</h2></header><dl>
+      <div><dt>الإحساس</dt><dd>${esc(out.emotion)}</dd></div>
+      <div><dt>القصة</dt><dd>${esc(out.story)}</dd></div>
+      <div><dt>القيمة اللي بتتلمس</dt><dd>${esc(out.value)}</dd></div></dl></div>
+    ${out.reflection?`<p class="note">${esc(out.reflection)}</p>`:''}
+    <div class="card"><p class="label">سؤال تقعد معاه</p><p style="margin-top:6px"><b>${esc(out.question)}</b></p></div>`:''}
+  ${!out && (S.manual || !aiOn)?`<div class="card"><p class="label" style="margin-bottom:6px">اسأل نفسك</p><ul style="margin:0;padding-inline-start:20px;color:var(--muted)"><li>أنهي إحساس بيرجع كل مرة؟</li><li>أنهي قصة بيحكيها عقلي كل مرة؟</li><li>وأنهي قيمة بتتلمس جوايا؟</li></ul></div>`:''}
+  <div class="row end">${back('home')}${aiOn?`<button class="btn primary" data-act="patternRun">${out?'راجع تاني':'ساعدني ألاحظ النمط'}</button>`:''}</div>`;
+},
+
+safety(){
+  return `
+  <div class="safety" role="alert">
+    <h2>سلامتك أهم من أي تمرين.</h2>
+    <p>اللي بتحكيه مهم، وإنت مش لوحدك فيه. لو حاسس إنك ممكن تأذي نفسك أو حد تاني، أو مش قادر تحافظ على أمانك دلوقتي، وقّف هنا واطلب مساعدة فورًا:</p>
+    <ul style="margin:0;padding-inline-start:20px">
+      <li>كلّم رقم الطوارئ في بلدك (في مصر: الإسعاف <b>123</b>).</li>
+      <li>كلّم حد بتثق فيه وخليه يكون معاك دلوقتي.</li>
+      <li>اطلب دعم من متخصص نفسي مؤهل.</li>
+    </ul>
+    <p class="hint" style="color:inherit">الأداة دي أداة للتأمل وتنظيم المشاعر، ومش بديل عن الدعم المتخصص أو دعم الأزمات.</p>
+  </div>
+  <div class="row">${back('home','الرجوع للرئيسية')}</div>`;
+}
+};
+
+function intensityBlock(key, q){
+  const val = S[key];
+  return `<div class="card" style="display:flex;flex-direction:column;gap:10px">${q?`<p><b>${q}</b></p>`:''}
+    <div class="scale" role="group" aria-label="شدة الإحساس من 1 لـ 10">${Array.from({length:10},(_,i)=>i+1).map(n=>`<button data-act="int" data-k="${key}" data-v="${n}" class="${val===n?'sel':''}" style="${val===n?`background:${heat(n)}`:''}" aria-pressed="${val===n}">${n}</button>`).join('')}</div>
+    <div class="scale-legend"><span>خفيف</span><span>طاغي</span></div></div>`;
+}
+function currentSnap(){
+  const ch = CHOICES.find(c=>c[0]===S.choice);
+  const toneAr = (TONES.find(t=>t[0]===S.tone)||[])[1];
+  const chosen = S.choice==='F' ? 'لسه بفكر، ومش لازم أقرر دلوقتي' : ch ? (ch[1] + (toneAr && 'ABC'.includes(S.choice)?` · بنبرة ${toneAr}`:'')) : '';
+  return { date:new Date().toISOString(), emotion:S.emotion, i1:S.i1, i2:S.i2, facts:S.facts, story:S.story,
+    alt:(S.alts||[])[0]||'', trap:(S.traps||[]).map(t=>t.name).join('، '), value:S.value, choice:chosen };
+}
+function snapCard(s, example){
+  const int = s.i1 ? `<span class="int">${s.i1}/10${s.i2?` <span class="down">← ${s.i2}/10</span>`:''}</span>` : '—';
+  return `<article class="snap"><header>${example?'<span class="tag">مثال</span>':''}<p class="eyebrow">ملخص الوقفة</p><h2>Your Stability Snapshot</h2></header><dl>
+    <div><dt>الإحساس الأقوى</dt><dd>${esc(s.emotion||'—')}</dd></div>
+    <div><dt>الشدة</dt><dd>${int}</dd></div>
+    ${s.facts?`<div><dt>اللي حصل فعلًا</dt><dd>${esc(s.facts)}</dd></div>`:''}
+    <div><dt>القصة</dt><dd>${esc(s.story||'—')}</dd></div>
+    ${s.alt?`<div><dt>احتمال تاني</dt><dd>${esc(s.alt)}</dd></div>`:''}
+    ${s.trap?`<div><dt>فخ تفكير محتمل</dt><dd>${esc(s.trap)}</dd></div>`:''}
+    <div><dt>القيمة اللي اتلمست</dt><dd>${esc(s.value||'—')}</dd></div>
+    <div><dt>اختيارك</dt><dd>${esc(s.choice||'—')}</dd></div>
+  </dl></article>`;
+}
+function lopBlock(){
+  return `<section class="lop" aria-labelledby="lopTitle">
+    <h2 id="lopTitle">وقفة واحدة هدّت الموقف.. بس الثبات الحقيقي إنك توصل لده من غير ما تحتاج تفتكر.</h2>
+    <p>اللي عملته دلوقتي مش مجرد تمرين، ده مهارة. 💛</p>
+    <p>بس الموقف ده هيرجع بشكل تاني، ومعاه نفس الإحساس.</p>
+    <p>وعشان كده في برنامج <b>Living on Purpose</b> مش بنتعلم نتحكم في ردود أفعالنا..<br>إحنا بنبني الأساس اللي بيخلينا ثابتين من جوّه، من غير مجهود ومن غير وقفة.</p>
+    <a class="btn primary lop-btn" href="${LOP_URL}" target="_blank" rel="noopener">ابدأ بناء ثباتك مع LOP ←</a>
+    <p class="lop-note">اضغط واعرف تفاصيل البرنامج وسجّل مكانك ❤️</p>
+  </section>
+  <div class="row" style="justify-content:center"><button class="btn ghost" data-act="full">ابدأ وقفة جديدة</button><button class="btn link" data-act="home">الرئيسية</button></div>`;
+}
+
+let breathTimer = null;
+function runBreath(){
+  const orb = $('#orb'), txt = $('#orbTxt'), btn = $('#breathBtn');
+  if(!orb) return;
+  btn.disabled = true;
+  let round = 1;
+  const step = () => {
+    if(!document.body.contains(orb)) return;
+    orb.className='orb in'; txt.innerHTML = `شهيق<small>4 ثواني · ${round} من 3</small>`;
+    breathTimer = setTimeout(()=>{
+      if(!document.body.contains(orb)) return;
+      orb.className='orb out'; txt.innerHTML = `زفير<small>6 ثواني · ${round} من 3</small>`;
+      breathTimer = setTimeout(()=>{
+        round++;
+        if(round<=3) step();
+        else { txt.innerHTML = `أحسنت<small>خد لحظة وبعدين كمّل</small>`; btn.disabled=false; btn.textContent='كرّر التمرين'; }
+      },6000);
+    },4000);
+  };
+  step();
+}
+
+function readInputs(){
+  const g = id => { const el = document.getElementById(id); return el ? el.value.trim() : null; };
+  const sit = g('sit'); if(sit!==null) S.situation = sit;
+  const f = g('facts'); if(f!==null) S.facts = f;
+  const st = g('story'); if(st!==null) S.story = st;
+  const ec = g('emoCustom'); if(ec) S.emotion = ec;
+  const al = g('altIn'); if(al!==null) S.alts = al.split('\n').map(x=>x.trim()).filter(Boolean);
+  const p = g('patIn'); if(p!==null) S.situation = p;
+}
+function toManual(msg){ S.manual = true; S.err = msg || ''; }
+
+document.addEventListener('click', async ev => {
+  const b = ev.target.closest('[data-act]'); if(!b) return;
+  const act = b.dataset.act, v = b.dataset.v;
+  if(!['home','quick','full','pattern'].includes(act)) readInputs();
+  switch(act){
+    case 'home': clearTimeout(breathTimer); ctl?.abort(); S={mode:'home',screen:'home'}; render(); break;
+    case 'quick': clearTimeout(breathTimer); ctl?.abort(); fresh('quick'); render(); break;
+    case 'full': clearTimeout(breathTimer); fresh('full'); render(); break;
+    case 'pattern': fresh('pattern'); S.screen='pattern'; render(); break;
+    case 'go': clearTimeout(breathTimer); S.screen = b.dataset.to; render(); break;
+    case 'cancel': ctl?.abort(); S.screen = S.returnTo||'tell'; render(); break;
+    case 'unlock': {
+      const el = document.getElementById('codeIn'); const code = (el ? el.value : '').trim();
+      if(!code){ S.err='اكتب الكود الأول.'; render(); return; }
+      b.disabled = true; b.textContent = 'لحظة…';
+      if(await checkCode(code)){ ACCESS = code; try{ localStorage.setItem('es_code', code); }catch(e){} S = {mode:'home', screen:'home'}; }
+      else { S.err = 'الكود ده مش صحيح. راجع الرسالة اللي وصلتك وجرّب تاني.'; }
+      render(); break;
+    }
+    case 'stopYes': S.stopChosen=true; S.screen='stop'; render(); break;
+
+    case 'analyze': {
+      if(!S.situation){ S.err='اكتب الموقف الأول، ولو في جملة واحدة.'; render(); return; }
+      if(CRISIS_RE.test(S.situation)) return goSafety();
+      S.err='';
+      if(!aiOn){ toManual(''); S.screen='name'; render(); return; }
+      S.returnTo='tell'; S.loadingText = S.mode==='quick'?'خد نفس… بنقرا الموقف معاك':'بنقرا الموقف معاك…'; S.screen='loading'; render();
+      try{
+        const r = await ask(ANALYZE_TASK, {mode:S.mode, situation:S.situation});
+        if(r?.safety==='crisis') return goSafety();
+        S.ai = r; S.manual = false;
+        S.facts = S.factsAI = r.facts||''; S.story = S.storyAI = r.story||'';
+        S.traps = Array.isArray(r.traps)?r.traps.filter(t=>t&&t.name):[];
+        S.alts = Array.isArray(r.alternatives)?r.alternatives:[];
+        S.values = Array.isArray(r.values)?r.values:[];
+        S.screen='name'; render();
+      }catch(e){
+        if(e?.code==='cancelled') return;
+        if(e?.code==='refused') return goSafety();
+        toManual(aiErrorText(e)); S.screen='name'; render();
+      }
+      break;
+    }
+    case 'emo': S.emotion = v; S.showClarify=false; render(); break;
+    case 'unsureEmo': S.showClarify = true; render(); break;
+    case 'nameNext':
+      if(!S.emotion){ const d=document.querySelector('details.more'); if(d) d.open=true; return; }
+      if(S.mode==='quick' && !S.i1){ const sc=document.querySelector('.scale'); if(sc) sc.scrollIntoView({block:'center'}); return; }
+      S.screen = S.mode==='quick' ? 'stop' : 'intensity'; render(); break;
+    case 'int': S[b.dataset.k] = Number(v); render(); break;
+    case 'intNext': S.screen = S.i1>=7 ? 'stop' : 'stopOffer'; render(); break;
+    case 'breath': runBreath(); break;
+    case 'trap': {
+      const has = S.traps.findIndex(t=>t.name===v);
+      if(has>=0) S.traps.splice(has,1); else { const t=TRAPS.find(x=>x[0]===v); S.traps.push({name:v, why:t?t[1]:''}); }
+      render(); break;
+    }
+    case 'storyNext': {
+      const changed = !S.manual && (S.facts!==S.factsAI || S.story!==S.storyAI);
+      if(CRISIS_RE.test(S.facts+' '+S.story)) return goSafety();
+      if(changed && aiOn){
+        S.returnTo='story'; S.loadingText='بنراجع القصة من تاني…'; S.screen='loading'; render();
+        try{
+          const r = await ask(REVIEW_TASK, {situation:S.situation, emotion:S.emotion, facts:S.facts, story:S.story});
+          if(r?.safety==='crisis') return goSafety();
+          S.traps = Array.isArray(r.traps)?r.traps.filter(t=>t&&t.name):[]; S.alts = Array.isArray(r.alternatives)?r.alternatives:S.alts;
+          S.factsAI=S.facts; S.storyAI=S.story; S.screen='story'; render(); return;
+        }catch(e){ if(e?.code==='cancelled') return; S.screen='alts'; render(); return; }
+      }
+      S.screen='alts'; render(); break;
+    }
+    case 'altsNext':
+      if(!S.i2){ const sc=document.querySelector('.scale'); if(sc) sc.scrollIntoView({block:'center'}); return; }
+      S.screen = S.mode==='quick' ? 'choice' : 'values'; render(); break;
+    case 'val': S.value = v; render(); break;
+    case 'choose':
+      S.choice = v;
+      if('ABC'.includes(v)){ S.screen='tone'; render(); }
+      else if(v==='D'||v==='E'){ S.screen='wait'; render(); }
+      else {
+        S.unsureOut=null;
+        if(aiOn && !S.manual){
+          S.returnTo='choice'; S.loadingText='خلينا نصغّر السؤال…'; S.screen='loading'; render();
+          try{ const r = await ask(UNSURE_TASK, {situation:S.situation, emotion:S.emotion, facts:S.facts, story:S.story, value:S.value});
+            if(r?.safety==='crisis') return goSafety(); S.unsureOut=r; }catch(e){ if(e?.code==='cancelled') return; }
+        }
+        S.screen='unsure'; render();
+      }
+      break;
+    case 'tone': S.tone = v; await makeDraft(false); break;
+    case 'redraft': await makeDraft(true); break;
+    case 'copyDraft': { const t = $('#draftTxt')?.innerText || S.draft; S.draft = t; copy(t, b, 'اتنسخت ✓', '#draftTxt'); break; }
+    case 'finish': {
+      const t = $('#draftTxt'); if(t) S.draft = t.innerText;
+      const hist = load('es_history', []); hist.unshift(currentSnap()); store('es_history', hist.slice(0,20));
+      S.screen='summary'; render(); break;
+    }
+    case 'copySnap': {
+      const s = currentSnap();
+      const txt = `Emotional Stability — Coach Heba ElSawah\nملخص الوقفة\n\nالإحساس: ${s.emotion}\nالشدة: ${s.i1||'-'}/10 ← ${s.i2||'-'}/10\nاللي حصل فعلًا: ${s.facts||'-'}\nالقصة: ${s.story||'-'}\nاحتمال تاني: ${s.alt||'-'}\nفخ تفكير محتمل: ${s.trap||'-'}\nالقيمة: ${s.value||'-'}\nاختياري: ${s.choice||'-'}\n\nالإحساس رسالة، مش أمر.\nإيه الرد اللي هتكون فخور بيه بكرة؟`;
+      copy(txt, b, 'اتنسخ ✓', '.snap'); break;
+    }
+    case 'patternRun': {
+      if(!S.situation){ S.err='احكي الموقف اللي بيتكرر الأول.'; render(); return; }
+      if(CRISIS_RE.test(S.situation)) return goSafety();
+      S.err=''; S.returnTo='pattern'; S.loadingText='بنلاحظ النمط مع بعض…'; S.screen='loading'; render();
+      try{
+        const hist = load('es_history', []).slice(0,5).map(h=>({emotion:h.emotion, story:h.story, value:h.value, trap:h.trap}));
+        const r = await ask(PATTERN_TASK, {situation:S.situation, recent_checkins:hist}, {fresh:true});
+        if(r?.safety==='crisis') return goSafety();
+        S.patternOut = r;
+      }catch(e){ if(e?.code==='cancelled') return; if(e?.code==='refused') return goSafety(); toManual(aiErrorText(e)); }
+      S.screen='pattern'; render(); break;
+    }
+  }
+});
+
+async function makeDraft(again){
+  const goal = (CHOICES.find(c=>c[0]===S.choice)||[])[2];
+  if(!aiOn || S.manual){ S.draft = templateDraft(goal, S.tone); S.draftCheck=''; S.screen='draft'; render(); return; }
+  S.returnTo='tone'; S.loadingText='بنكتب رد يعبّر عنك…'; S.screen='loading'; render();
+  try{
+    const r = await ask(DRAFT_TASK, {situation:S.situation, emotion:S.emotion, facts:S.facts, story_not_to_use_as_fact:S.story, value:S.value, goal, tone:S.tone, previous_draft: again?S.draft:undefined}, {fresh:again});
+    if(r?.safety==='crisis') return goSafety();
+    S.draft = r.message || templateDraft(goal,S.tone); S.draftCheck = r.check||'';
+  }catch(e){
+    if(e?.code==='cancelled') return;
+    S.draft = templateDraft(goal,S.tone); S.draftCheck='';
+  }
+  S.screen='draft'; render();
+}
+function templateDraft(goal, tone){
+  const f = S.facts ? S.facts.replace(/[.]+$/,'') : 'اللي حصل';
+  const e = S.emotion || 'متضايق';
+  const short = tone==='Short & simple';
+  if(goal==='set a boundary'){
+    return short ? `محتاج نتكلم في اللي حصل. أنا مش مرتاح لده، ومحتاج ما يتكررش.`
+      : tone==='Firm & boundaried' ? `لما ${f}، حسيت إني ${e}. محتاج ده ما يتكررش، ولو اتكرر هتعامل معاه بشكل مختلف. حابب نكون واضحين في ده.`
+      : `عايز أكون صريح معاك: لما ${f}، حسيت إني ${e}. محتاج نتفق إن ده ما يتكررش، لأنه مهم بالنسبالي.`;
+  }
+  if(goal==='ask for clarification'){
+    return short ? `ممكن أفهم حصل إيه؟ لما تكون فاضي.` : `لما ${f}، مكنتش فاهم حصل إيه وحسيت إني ${e}. لما تكون فاضي حابب أفهم منك.`;
+  }
+  return short ? `حسيت إني ${e} من اللي حصل، وحابب نتكلم لما تكون فاضي.`
+    : tone==='Warm & honest' ? `حابب أشاركك حاجة بصراحة: لما ${f}، حسيت إني ${e}. مش بلوم حد، بس مهم عندي تعرف ده. لما تكون جاهز نتكلم.`
+    : `لما ${f}، حسيت إني ${e}. لما تكون فاضي حابب نتكلم في ده.`;
+}
+function copy(text, btn, done, sel){
+  const ok = () => { const o = btn.textContent; btn.textContent = done; setTimeout(()=>{ btn.textContent=o; },1600); };
+  const fallback = () => { const el = document.querySelector(sel); if(el){ const r=document.createRange(); r.selectNodeContents(el); const s=getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent='النص متحدد، انسخه'; } };
+  try{ navigator.clipboard.writeText(text).then(ok).catch(fallback); }catch(e){ fallback(); }
+}
+
+boot();
+</script>
+</body>
+</html>
